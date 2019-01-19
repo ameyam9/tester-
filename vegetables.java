@@ -1,17 +1,16 @@
-import java.util.*;
+import java.io.*;
 
 public class vegetables {
 
 
     public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
         System.out.println("Do you PINKY PROMISE to be honest?(Y/N)");
-        String input = keyboard.nextLine();
+        String input = getString();
 
         if (input.equals("Y")){
           System.out.println("thank you, 50 needles if you lied\n \n");
           System.out.println("Have you eaten your vegetables? (Y/N)");
-          String input2 = keyboard.nextLine();
+          String input2 = getString();
           if(input2.equals("Y")){
               System.out.println("Eat more");
           }
@@ -27,4 +26,14 @@ public class vegetables {
           System.out.println("Answer bitch");
         }
     }
+    
+    public static String getString() {
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            String s = br.readLine();
+            return s; 
+        }
+        catch(IOException ioe) {}
+        return "";
+    } 
 }
